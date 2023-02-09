@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_HOTEL_MANAGEMENTModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DB_HOTEL_MANAGEMENTModelStoreContainer">
+    <EntitySet Name="Comments" EntityType="DB_HOTEL_MANAGEMENTModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hotels" EntityType="DB_HOTEL_MANAGEMENTModel.Store.Hotels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reservations" EntityType="DB_HOTEL_MANAGEMENTModel.Store.Reservations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rooms" EntityType="DB_HOTEL_MANAGEMENTModel.Store.Rooms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DB_HOTEL_MANAGEMENTModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="fk_Ct_IdC_IdH" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Ct_IdC_IdH">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Ct_IdC_IdU" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Ct_IdC_IdU">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Ht_IdH" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Ht_IdH">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Hotels" EntitySet="Hotels" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Rm_IdR_IdU" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Rm_IdR_IdU">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Rs_IdR_IdR" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Rs_IdR_IdR">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Reservations" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Rs_IdR_IdU" Association="DB_HOTEL_MANAGEMENTModel.Store.fk_Rs_IdR_IdU">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Reservations" EntitySet="Reservations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id_Comment" />
+    </Key>
+    <Property Name="Id_Comment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Opinion" Type="bit" Nullable="false" />
+    <Property Name="Comment1" Type="varchar" Nullable="false" MaxLength="400" />
+    <Property Name="Date_Comment" Type="datetime" Nullable="false" />
+    <Property Name="Id_user" Type="int" Nullable="false" />
+    <Property Name="Id_Hotel" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotels">
+    <Key>
+      <PropertyRef Name="Id_Hotel" />
+    </Key>
+    <Property Name="Id_Hotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Hotel" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Address_Hotel" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="City_Hotel" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="Stars" Type="int" Nullable="false" />
+    <Property Name="Id_user" Type="int" Nullable="true" />
+    <Property Name="Description_Hotel" Type="varchar" Nullable="false" MaxLength="400" />
+    <Property Name="Image_Hotel" Type="varchar" Nullable="true" MaxLength="2000" />
+    <Property Name="Number_Room" Type="int" Nullable="true" />
+    <Property Name="Telephone" Type="varchar" Nullable="true" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Reservations">
+    <Key>
+      <PropertyRef Name="Id_Reservation" />
+    </Key>
+    <Property Name="Id_Reservation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Begin" Type="datetime" Nullable="false" />
+    <Property Name="Date_End" Type="datetime" Nullable="false" />
+    <Property Name="Date_Reservation" Type="datetime" Nullable="false" />
+    <Property Name="Bill" Type="float" Nullable="false" />
+    <Property Name="Id_user" Type="int" Nullable="false" />
+    <Property Name="Id_Room" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="Id_Room" />
+    </Key>
+    <Property Name="Id_Room" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_Room" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Id_Hotel" Type="int" Nullable="false" />
+    <Property Name="Image_Room" Type="varchar" Nullable="false" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Last_Name" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="Pwd" Type="varchar" Nullable="true" MaxLength="200" />
+    <Property Name="Roles" Type="bit" Nullable="true" />
+  </EntityType>
+  <Association Name="fk_Ct_IdC_IdH">
+    <End Role="Hotels" Type="DB_HOTEL_MANAGEMENTModel.Store.Hotels" Multiplicity="1" />
+    <End Role="Comments" Type="DB_HOTEL_MANAGEMENTModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="Id_Hotel" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="Id_Hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Ct_IdC_IdU">
+    <End Role="Users" Type="DB_HOTEL_MANAGEMENTModel.Store.Users" Multiplicity="1" />
+    <End Role="Comments" Type="DB_HOTEL_MANAGEMENTModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id_user" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Ht_IdH">
+    <End Role="Users" Type="DB_HOTEL_MANAGEMENTModel.Store.Users" Multiplicity="0..1" />
+    <End Role="Hotels" Type="DB_HOTEL_MANAGEMENTModel.Store.Hotels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id_user" />
+      </Principal>
+      <Dependent Role="Hotels">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Rm_IdR_IdU">
+    <End Role="Hotels" Type="DB_HOTEL_MANAGEMENTModel.Store.Hotels" Multiplicity="1" />
+    <End Role="Rooms" Type="DB_HOTEL_MANAGEMENTModel.Store.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="Id_Hotel" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="Id_Hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Rs_IdR_IdR">
+    <End Role="Rooms" Type="DB_HOTEL_MANAGEMENTModel.Store.Rooms" Multiplicity="1" />
+    <End Role="Reservations" Type="DB_HOTEL_MANAGEMENTModel.Store.Reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="Id_Room" />
+      </Principal>
+      <Dependent Role="Reservations">
+        <PropertyRef Name="Id_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Rs_IdR_IdU">
+    <End Role="Users" Type="DB_HOTEL_MANAGEMENTModel.Store.Users" Multiplicity="1" />
+    <End Role="Reservations" Type="DB_HOTEL_MANAGEMENTModel.Store.Reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id_user" />
+      </Principal>
+      <Dependent Role="Reservations">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

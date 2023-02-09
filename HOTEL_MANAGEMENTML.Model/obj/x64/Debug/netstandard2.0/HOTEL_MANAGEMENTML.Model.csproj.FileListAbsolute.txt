@@ -1,0 +1,11 @@
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\bin\x64\Debug\netstandard2.0\MLModel.zip
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\bin\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.deps.json
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\bin\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.dll
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\bin\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.pdb
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.csproj.AssemblyReference.cache
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.AssemblyInfoInputs.cache
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.AssemblyInfo.cs
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.csproj.CoreCompileInputs.cache
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.dll
+C:\Users\vPro\Desktop\.net\Hotel_Management-master\HOTEL_MANAGEMENTML.Model\obj\x64\Debug\netstandard2.0\HOTEL_MANAGEMENTML.Model.pdb
